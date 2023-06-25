@@ -1,7 +1,7 @@
 import { dictionary } from "@/data/dictionary";
 import { NextResponse } from "next/server";
 import { getSearchParams } from "../route";
-import { LangPair, Word, WordToLearn } from "@/common_modules/types";
+import { WordToLearn } from "@/common_modules/types";
 import { getMeaningsWord, getRandomInteger, getWordById, getWordsVariations } from "@/common_modules/common";
 
 export async function GET(req: Request) {
