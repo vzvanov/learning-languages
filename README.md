@@ -2,6 +2,7 @@
 
 This is an application for learning a foreign languages. The application has its own API.
 The application was created in TypeScript, React library, Next.JS framework and the state manager: Zustand.
+
 Solution URL: [https://github.com/vzvanov/learning-languages](https://github.com/vzvanov/learning-languages)
 
 ## Powered by
