@@ -2,6 +2,7 @@
 
 This is an application for learning a foreign languages. The application has its own API.
 The application was created in TypeScript, React library, Next.JS framework and the state manager: Zustand.
+Solution URL: [https://github.com/vzvanov/learning-languages](https://github.com/vzvanov/learning-languages)
 
 ## Powered by
 
@@ -11,7 +12,7 @@ The application was created in TypeScript, React library, Next.JS framework and 
 
 [![NEXT.js](/assets/images/next-js.png)](https://nextjs.org/ "NEXT.js")
 
-[![Zustand](/assets/images/zustand.jpg)](https://docs.pmnd.rs/zustand/getting-started/introduction "Zustand")
+[![Zustand](/assets/images/zustand.jpeg)](https://docs.pmnd.rs/zustand/getting-started/introduction "Zustand")
 
 ## Getting Started
 
