@@ -1,95 +1,107 @@
-import Image from 'next/image'
-import styles from './page.module.css'
+'use client';
+import { useLanguages } from '@/store';
+import { shallow } from 'zustand/shallow';
+import { getNextWordToLearn } from '@/services/getDictionary';
+import { useState } from 'react';
+import { Variations } from '@/components/Variations/Variations';
+import { LearningWord } from '@/components/LearningWord/LearningWord';
+import { WordToLearn } from '@/common_modules/types';
+import styles from './home.module.css';
+
+type TestWord = {
+  id: number,
+  value: string
+};
 
 export default function Home() {
+  const [startLearning, setStartLearning] = useState(false);
+  const [direction, setDirection] = useState(false);
+  const [baseLang, learningLang] = useLanguages(
+    (state) => [state.baseLang, state.learningLang],
+    shallow);
+  const [wordToLearn, setWordToLearn] = useState('');
+  const [words, setWords] = useState<TestWord[]>([]);
+  const [rightAnswer, setRightAnswer] = useState(0);
+  const [testResult, setTestResult] = useState({
+    right: 0,
+    wrong: 0
+  });
+  const [freeze, setFreeze] = useState(false);
+
+  function getWordsToLearn(word: WordToLearn, direction: boolean) {
+    const result: TestWord[] = [
+      {
+        id: word.id,
+        value: direction ? word.learningLang : word.baseLang
+      }
+    ];
+
+    for (let item of word.variation) {
+      result.push({
+        id: item.id,
+        value: direction ? item.learningLang : item.baseLang
+      });
+    }
+
+    return result;
+  }
+
+  function shuffle(array: TestWord[]): void {
+    array.sort(() => Math.random() - 0.5);
+  }
+
+  const handleStartLearning = async () => {
+    const wordWithVariatons: WordToLearn = await getNextWordToLearn(baseLang, learningLang);
+
+    setWordToLearn(direction ? wordWithVariatons.baseLang : wordWithVariatons.learningLang);
+    setStartLearning(true);
+    setRightAnswer(wordWithVariatons.id);
+    setTestResult({
+      right: 0,
+      wrong: 0
+    });
+    setFreeze(false);
+    setDirection(!direction);
+
+    const wordToLearn = getWordsToLearn(wordWithVariatons, direction);
+    shuffle(wordToLearn);
+    setWords(wordToLearn);
+  }
+
+  const handleAnswer = (answer: number) => {
+
+    if (answer === rightAnswer) {
+      setTestResult({
+        right: answer,
+        wrong: 0
+      });
+    } else {
+      setTestResult({
+        right: rightAnswer,
+        wrong: answer
+      });
+    }
+    setFreeze(true);
+  }
+
   return (
-    <main className={styles.main}>
-      <div className={styles.description}>
-        <p>
-          Get started by editing&nbsp;
-          <code className={styles.code}>app/page.tsx</code>
-        </p>
-        <div>
-          <a
-            href="https://vercel.com?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            By{' '}
-            <Image
-              src="/vercel.svg"
-              alt="Vercel Logo"
-              className={styles.vercelLogo}
-              width={100}
-              height={24}
-              priority
-            />
-          </a>
-        </div>
+    <>
+      <LearningWord
+        word={wordToLearn}
+      />
+      <Variations
+        words={words}
+        onAnswer={handleAnswer}
+        testResult={testResult}
+        freeze={freeze}
+      />
+      <div className={styles.buttons}>
+        <button
+          className={styles.button}
+          name='startLearning'
+          onClick={handleStartLearning}
+        >{startLearning ? 'Next' : 'Start learning'}</button>
       </div>
-
-      <div className={styles.center}>
-        <Image
-          className={styles.logo}
-          src="/next.svg"
-          alt="Next.js Logo"
-          width={180}
-          height={37}
-          priority
-        />
-      </div>
-
-      <div className={styles.grid}>
-        <a
-          href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Docs <span>-&gt;</span>
-          </h2>
-          <p>Find in-depth information about Next.js features and API.</p>
-        </a>
-
-        <a
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Learn <span>-&gt;</span>
-          </h2>
-          <p>Learn about Next.js in an interactive course with&nbsp;quizzes!</p>
-        </a>
-
-        <a
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Templates <span>-&gt;</span>
-          </h2>
-          <p>Explore the Next.js 13 playground.</p>
-        </a>
-
-        <a
-          href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template&utm_campaign=create-next-app"
-          className={styles.card}
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <h2>
-            Deploy <span>-&gt;</span>
-          </h2>
-          <p>
-            Instantly deploy your Next.js site to a shareable URL with Vercel.
-          </p>
-        </a>
-      </div>
-    </main>
+    </>
   )
 }

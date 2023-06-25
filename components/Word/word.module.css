@@ -1,0 +1,21 @@
+.row {
+  display: flex;
+}
+
+.left {
+  width: 7rem;
+  display: flex;
+  justify-content: right;
+}
+
+.left::after {
+  content: '';
+  width: 2px;
+  background-color: gray;
+  margin-left: 0.5rem;
+}
+
+.right {
+  width: 7rem;
+  margin-left: 0.5rem;
+}

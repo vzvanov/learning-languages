@@ -1,0 +1,47 @@
+/* VARIATIONS */
+
+.variations {
+  align-self: center;
+  width: 35rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 1rem;
+  grid-auto-rows: 5rem;
+  margin-bottom: 1rem;
+}
+
+.item {
+  border: 2px solid grey;
+  border-radius: 1rem;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+  padding: 0.5rem;
+
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+.answer {
+  transition: all 0.2s ease;
+}
+
+.answer:hover {
+  background-color: beige;
+}
+
+.answer:active {
+  font-size: 1.15rem;
+}
+
+.right {
+  background-color: aquamarine;
+  font-weight: bold;
+}
+
+.wrong {
+  color: red;
+  font-weight: bold;
+}

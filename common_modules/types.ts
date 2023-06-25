@@ -1,0 +1,41 @@
+
+export enum LangPart {
+  noun, pronoun, adjective, verb, adverb, preposition, conjunction, interjection
+}
+
+export type Part = {
+  part: LangPart;
+  description: LangValue[];
+}
+
+export type LangValue = {
+  lang: string;
+  value: string;
+}
+
+export type Language = {
+  id: number;
+  abbreviation: string;
+  description: LangValue[];
+}
+
+export type Word = {
+  id: number;
+  meanings: LangValue[];
+  part: LangPart;
+  images: String[];
+  description: LangValue[];
+}
+
+export type LangPair = {
+  id: number;
+  baseLang: string;
+  learningLang: string;
+}
+
+export type WordToLearn = {
+  id: number,
+  baseLang: string,
+  learningLang: string,
+  variation: LangPair[]
+}

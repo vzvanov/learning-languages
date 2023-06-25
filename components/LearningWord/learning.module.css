@@ -1,0 +1,11 @@
+/* LEARNING WORD */
+
+.word {
+  align-self: center;
+  font-size: 2rem;
+  max-width: 35rem;
+  height: 5rem;
+  display: flex;
+  align-items: center;
+  overflow: auto;
+}

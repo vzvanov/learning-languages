@@ -1,0 +1,16 @@
+.h2 {
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.row {
+  align-self: center;
+  padding: 0.25rem;
+  width: 17rem;
+}
+
+.label {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
