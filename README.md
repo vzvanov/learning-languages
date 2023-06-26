@@ -3,7 +3,7 @@
 This is an application for learning a foreign languages. The application has its own API.
 The application was created in TypeScript, React library, Next.JS framework and the state manager: Zustand.
 
-Solution URL: [https://github.com/vzvanov/learning-languages](https://github.com/vzvanov/learning-languages)
+Solution URL: [https://vzvanov.github.io/learning-languages/](https://vzvanov.github.io/learning-languages/)
 
 ## Powered by
 
@@ -39,7 +39,7 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Links
 
-- Solution URL: [https://github.com/vzvanov/learning-languages](https://github.com/vzvanov/learning-languages)
+- Solution URL: [https://vzvanov.github.io/learning-languages/](https://vzvanov.github.io/learning-languages/)
 
 ## Author
 
