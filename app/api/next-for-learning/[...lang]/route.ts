@@ -1,10 +1,9 @@
 import { dictionary } from "@/data/dictionary";
 import { NextResponse } from "next/server";
-import { getSearchParams } from "../route";
 import { WordToLearn } from "@/common_modules/types";
 import { getMeaningsWord, getRandomInteger, getWordById, getWordsVariations } from "@/common_modules/common";
 
-export async function GET(req: Request) {
+export async function GET(req: Request, { params }: { params: { lang: string[] } }) {
   const numberOfOptions: number = 7;
   const result: WordToLearn = {
     id: 0,
@@ -12,7 +11,7 @@ export async function GET(req: Request) {
     learningLang: '',
     variation: []
   };
-  const { baseLang, learningLang } = getSearchParams(req.url);
+  const [baseLang, learningLang] = params.lang;
   if (!baseLang || !learningLang) {
     return new Response('Parameter not specified', {
       status: 400
