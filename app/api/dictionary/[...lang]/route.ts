@@ -12,6 +12,5 @@ export async function GET(req: Request, { params }: { params: { lang: string[] }
     )
   }
   const dic = getDictionary(dictionary, baseLang, learningLang);
-
   return NextResponse.json(dic);
 }

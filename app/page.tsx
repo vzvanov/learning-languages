@@ -1,5 +1,5 @@
 'use client';
-import { useLanguages } from '@/store';
+import { useDB, useLanguages } from '@/store';
 import { shallow } from 'zustand/shallow';
 import { getNextWordToLearn } from '@/services/getDictionary';
 import { useState } from 'react';
@@ -14,6 +14,10 @@ type TestWord = {
 };
 
 export default function Home() {
+  const [source] = useDB(
+    (state) => [state.source],
+    shallow
+  );
   const [startLearning, setStartLearning] = useState(false);
   const [direction, setDirection] = useState(false);
   const [baseLang, learningLang] = useLanguages(
@@ -42,7 +46,6 @@ export default function Home() {
         value: direction ? item.learningLang : item.baseLang
       });
     }
-
     return result;
   }
 
@@ -51,7 +54,7 @@ export default function Home() {
   }
 
   const handleStartLearning = async () => {
-    const wordWithVariatons: WordToLearn = await getNextWordToLearn(baseLang, learningLang);
+    const wordWithVariatons: WordToLearn = await getNextWordToLearn(baseLang, learningLang, source);
 
     setWordToLearn(direction ? wordWithVariatons.baseLang : wordWithVariatons.learningLang);
     setStartLearning(true);

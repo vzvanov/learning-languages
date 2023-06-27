@@ -3,6 +3,10 @@ export enum LangPart {
   noun, pronoun, adjective, verb, adverb, preposition, conjunction, interjection
 }
 
+export enum SourceDB {
+  local, api
+}
+
 export type Part = {
   part: LangPart;
   description: LangValue[];

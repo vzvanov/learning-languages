@@ -1,6 +1,6 @@
 "use client";
 import { Select } from "@/components/Select/Select";
-import { useLanguages } from "@/store";
+import { useDB, useLanguages } from "@/store";
 import { useEffect } from "react";
 import { shallow } from "zustand/shallow";
 import styles from './settings.module.css';
@@ -12,9 +12,14 @@ export default function Settings() {
       state.getAllLanguages, state.setBaseLanguage, state.setLearningLanguage],
       shallow
     );
+  const [source] = useDB(
+    (state) => [state.source],
+    shallow
+  );
+
   useEffect(() => {
-    getAllLanguages();
-  }, [getAllLanguages]);
+    getAllLanguages(source);
+  }, [getAllLanguages, source]);
 
   return (
     <>
