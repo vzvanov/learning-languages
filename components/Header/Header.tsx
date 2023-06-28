@@ -1,14 +1,18 @@
-import Link from "next/link";
-import styles from './header.module.css'
+import styles from './header.module.css';
+import { Navigation } from "../Navigation/Navigation";
+
+const navItems = [
+  { label: "Home", href: "/" },
+  { label: "Dictionary", href: "/dictionary" },
+  { label: "Settings", href: "/settings" },
+];
 
 const Header = () => {
   return (
     <header
       className={styles.header}
     >
-      <Link className={styles.a} href="/">Home</Link>
-      <Link className={styles.a} href="/dictionary">Dictionary</Link>
-      <Link className={styles.a} href="/settings">Settings</Link>
+      <Navigation navLinks={navItems} />
     </header>
   );
 };

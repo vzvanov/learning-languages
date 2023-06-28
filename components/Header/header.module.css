@@ -3,20 +3,3 @@
   padding: 0.5rem;
   background-color: darkslategrey;
 }
-
-.header .a {
-  margin-right: 2rem;
-  color: white;
-}
-
-.header .a:last-child {
-  margin-right: 0;
-}
-
-.a {
-  text-decoration: none;
-}
-
-.a:hover {
-  text-decoration: underline;
-}

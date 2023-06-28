@@ -30,9 +30,6 @@ export default function Dictionary() {
 
   return (
     <>
-      <h2
-        className={styles.h2}
-      >Dictionary</h2>
       <div
         className={styles.words}
       >

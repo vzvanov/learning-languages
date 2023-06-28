@@ -23,9 +23,6 @@ export default function Settings() {
 
   return (
     <>
-      <h2
-        className={styles.h2}
-      >Settings</h2>
       <div
         className={styles.row}
       ><label
