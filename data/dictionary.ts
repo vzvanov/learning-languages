@@ -396,5 +396,302 @@ export const dictionary: Word[] = [
         value: ""
       }
     ]
+  },
+  {
+    "id": 13,
+    part: LangPart.verb,
+    meanings: [
+      {
+        lang: "rus",
+        value: "Я есть"
+      },
+      {
+        lang: "slv",
+        value: "jaz sem"
+      },
+      {
+        lang: "eng",
+        value: "i am"
+      }
+    ],
+    "images": [],
+    "description": [
+      {
+        lang: "rus",
+        value: ""
+      },
+      {
+        lang: "slv",
+        value: ""
+      },
+      {
+        lang: "eng",
+        value: ""
+      }
+    ]
+  },
+  {
+    "id": 14,
+    part: LangPart.verb,
+    meanings: [
+      {
+        lang: "rus",
+        value: "Ты есть"
+      },
+      {
+        lang: "slv",
+        value: "ti si"
+      },
+      {
+        lang: "eng",
+        value: "he/she is"
+      }
+    ],
+    "images": [],
+    "description": [
+      {
+        lang: "rus",
+        value: ""
+      },
+      {
+        lang: "slv",
+        value: ""
+      },
+      {
+        lang: "eng",
+        value: ""
+      }
+    ]
+  },
+  {
+    "id": 15,
+    part: LangPart.verb,
+    meanings: [
+      {
+        lang: "rus",
+        value: "Он/Она есть"
+      },
+      {
+        lang: "slv",
+        value: "on/ona je"
+      },
+      {
+        lang: "eng",
+        value: "they are"
+      }
+    ],
+    "images": [],
+    "description": [
+      {
+        lang: "rus",
+        value: ""
+      },
+      {
+        lang: "slv",
+        value: ""
+      },
+      {
+        lang: "eng",
+        value: ""
+      }
+    ]
+  },
+  {
+    "id": 16,
+    part: LangPart.verb,
+    meanings: [
+      {
+        lang: "rus",
+        value: "мы (двое) есть"
+      },
+      {
+        lang: "slv",
+        value: "midva/midve sva"
+      },
+      {
+        lang: "eng",
+        value: "we (two) are"
+      }
+    ],
+    "images": [],
+    "description": [
+      {
+        lang: "rus",
+        value: ""
+      },
+      {
+        lang: "slv",
+        value: ""
+      },
+      {
+        lang: "eng",
+        value: ""
+      }
+    ]
+  },
+  {
+    "id": 17,
+    part: LangPart.verb,
+    meanings: [
+      {
+        lang: "rus",
+        value: "вы (двое) есть"
+      },
+      {
+        lang: "slv",
+        value: "vidva/vidve sta"
+      },
+      {
+        lang: "eng",
+        value: "you (two) are"
+      }
+    ],
+    "images": [],
+    "description": [
+      {
+        lang: "rus",
+        value: ""
+      },
+      {
+        lang: "slv",
+        value: ""
+      },
+      {
+        lang: "eng",
+        value: ""
+      }
+    ]
+  },
+  {
+    "id": 18,
+    part: LangPart.verb,
+    meanings: [
+      {
+        lang: "rus",
+        value: "они (двое) есть"
+      },
+      {
+        lang: "slv",
+        value: "onadva/onidve sta"
+      },
+      {
+        lang: "eng",
+        value: "they (two) are"
+      }
+    ],
+    "images": [],
+    "description": [
+      {
+        lang: "rus",
+        value: ""
+      },
+      {
+        lang: "slv",
+        value: ""
+      },
+      {
+        lang: "eng",
+        value: ""
+      }
+    ]
+  },
+  {
+    "id": 19,
+    part: LangPart.verb,
+    meanings: [
+      {
+        lang: "rus",
+        value: "мы (больше двух) есть"
+      },
+      {
+        lang: "slv",
+        value: "mi/me smo"
+      },
+      {
+        lang: "eng",
+        value: "we (plural) are"
+      }
+    ],
+    "images": [],
+    "description": [
+      {
+        lang: "rus",
+        value: ""
+      },
+      {
+        lang: "slv",
+        value: ""
+      },
+      {
+        lang: "eng",
+        value: ""
+      }
+    ]
+  },
+  {
+    "id": 20,
+    part: LangPart.verb,
+    meanings: [
+      {
+        lang: "rus",
+        value: "вы (больше двух) есть"
+      },
+      {
+        lang: "slv",
+        value: "vi/ve ste"
+      },
+      {
+        lang: "eng",
+        value: "you (plural) are"
+      }
+    ],
+    "images": [],
+    "description": [
+      {
+        lang: "rus",
+        value: ""
+      },
+      {
+        lang: "slv",
+        value: ""
+      },
+      {
+        lang: "eng",
+        value: ""
+      }
+    ]
+  },
+  {
+    "id": 21,
+    part: LangPart.verb,
+    meanings: [
+      {
+        lang: "rus",
+        value: "они (больше двух) есть"
+      },
+      {
+        lang: "slv",
+        value: "oni/one so"
+      },
+      {
+        lang: "eng",
+        value: "they (plural) are"
+      }
+    ],
+    "images": [],
+    "description": [
+      {
+        lang: "rus",
+        value: ""
+      },
+      {
+        lang: "slv",
+        value: ""
+      },
+      {
+        lang: "eng",
+        value: ""
+      }
+    ]
   }
 ]

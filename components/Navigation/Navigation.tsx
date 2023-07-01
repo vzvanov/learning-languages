@@ -19,7 +19,7 @@ const Navigation = ({ navLinks }: Props) => {
   const pathname = usePathname();
 
   return (
-    <>
+    <nav>
       {navLinks.map((link) => {
         const isActive = pathname === link.href;
 
@@ -33,7 +33,7 @@ const Navigation = ({ navLinks }: Props) => {
           </Link>
         );
       })}
-    </>
+    </nav>
   );
 };
 

@@ -1,4 +1,5 @@
 import { LangPair, LangPart, Word, WordToLearn } from "@/common_modules/types";
+import { options } from "@/data/options";
 
 export const getMeaningsWord = (word: Word, baseLang: string, learningLang: string) => {
   let data: LangPair = {
@@ -27,30 +28,18 @@ export const getDictionary = (dictionary: Word[], baseLang: string, learningLang
   return dic;
 }
 
-export function getWordsVariations(dictionary: Word[], wordId: number, numberVariations: number,
+export function getWordsVariations(dictionary: Word[], arrayId: number[], numberVariations: number,
   baseLang: string, learningLang: string): LangPair[] {
 
-  let variationsId: number[] = [wordId];
+  let variationsId: number[] = [];
   let count = 0;
-  let countVariations = 1000;
 
-  while (count < numberVariations && countVariations > 0) {
-    let randomId = 0;
-    let nextId = true;
-    while (nextId && countVariations > 0) {
-      randomId = getRandomInteger(1, dictionary.length - 1);
-      nextId = variationsId.includes(randomId);
-      countVariations--;
-    }
-    if (!nextId) {
-      variationsId.push(randomId);
-      count++;
-      countVariations = 1000;
-    }
-    countVariations--;
+  while (count < numberVariations && arrayId.length > 0) {
+    let randomId = getRandomInteger(0, arrayId.length - 1);
+    variationsId.push(arrayId[randomId]);
+    arrayId.splice(randomId, 1);
+    count++;
   }
-
-  variationsId.shift();
 
   const result: LangPair[] = [];
 
@@ -97,15 +86,19 @@ export function getNextWord(baseLang: string, learningLang: string, dictionary: 
     learningLang: '',
     variation: []
   };
+  const arrayId = [];
+  for (let word of dictionary) arrayId.push(word.id);
 
-  const randomId = getRandomInteger(1, dictionary.length - 1);
-  const word = getWordById(dictionary, randomId);
+  const randomId = getRandomInteger(0, arrayId.length - 1);
+  const word = getWordById(dictionary, arrayId[randomId]);
   if (!word.id) undefined;
 
   const { data, readyWord } = getMeaningsWord(word, baseLang, learningLang);
   if (!readyWord) undefined;
 
-  const wordsVariations = getWordsVariations(dictionary, randomId, numberOfOptions, baseLang, learningLang);
+  arrayId.splice(randomId, 1);
+
+  const wordsVariations = getWordsVariations(dictionary, arrayId, numberOfOptions, baseLang, learningLang);
 
   result.id = data.id;
   result.baseLang = data.baseLang;
@@ -113,4 +106,13 @@ export function getNextWord(baseLang: string, learningLang: string, dictionary: 
   result.variation = wordsVariations;
 
   return result;
+}
+
+export function getDictionaryByOption(dictionary: Word[], optionsId: number[]): Word[] {
+  const dic: Word[] = [];
+  for (let word of dictionary) {
+    if (optionsId.includes(word.id)) dic.push(word);
+    if (dic.length === optionsId.length) break;
+  }
+  return dic;
 }

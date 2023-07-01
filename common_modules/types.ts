@@ -43,3 +43,7 @@ export type WordToLearn = {
   learningLang: string,
   variation: LangPair[]
 }
+
+export type Option = {
+  to_be: number[];
+}

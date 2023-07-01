@@ -3,7 +3,7 @@
 }
 
 .left {
-  width: 7rem;
+  width: 20rem;
   display: flex;
   justify-content: right;
 }
@@ -16,6 +16,6 @@
 }
 
 .right {
-  width: 7rem;
+  width: 20rem;
   margin-left: 0.5rem;
 }

@@ -1,28 +1,40 @@
-.buttons {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.items {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 2rem 0;
 }
 
-/* BUTTON */
+.item {
 
-.button {
-  cursor: pointer;
-  width: 10rem;
-  border-radius: 0.5rem;
-  border: 2px solid grey;
-  background-color: darkslategrey;
-  color: white;
-  line-height: 1.5rem;
-  letter-spacing: 0.05rem;
-  transition: all 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+
+    min-width: 10em;
+    text-align: center;
+    line-height: 2rem;
+    padding: 0 1rem;
+    overflow: hidden;
+    padding: 0 5%;
+
+    border: 2px solid grey;
+    border-radius: 0.5rem;
+
+    cursor: pointer;
+    transition: all 0.3s;
 }
 
-.button:hover {
-  background-color: white;
-  color: darkslategrey
+.item:hover {
+    transform: scale(1.25);
+    background-color: white;
 }
 
-.button:active {
-  font-size: 1.15rem;
+.item:hover {
+    transform: scale(1.25);
+    background-color: white;
+}
+
+.tof_item:active {
+    font-weight: bold;
 }
