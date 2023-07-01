@@ -44,6 +44,12 @@ export type WordToLearn = {
   variation: LangPair[]
 }
 
-export type Option = {
-  to_be: number[];
+export type SelectionItem = {
+  filter: number[];
+  key: string;
+}
+
+export type Selections = {
+  to_be: SelectionItem;
+  pronoun: SelectionItem;
 }

@@ -13,7 +13,7 @@ type UseLanguages = {
 
 export const useLanguages = create<UseLanguages>()((set) => ({
   languages: [],
-  baseLang: 'eng',
+  baseLang: 'rus',
   learningLang: 'slv',
   getAllLanguages: async (source) => {
     const languages = await getAllLanguages(source);

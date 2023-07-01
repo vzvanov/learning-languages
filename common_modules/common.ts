@@ -1,5 +1,4 @@
-import { LangPair, LangPart, Word, WordToLearn } from "@/common_modules/types";
-import { options } from "@/data/options";
+import { LangPair, LangPart, SelectionItem, Word, WordToLearn } from "@/common_modules/types";
 
 export const getMeaningsWord = (word: Word, baseLang: string, learningLang: string) => {
   let data: LangPair = {
@@ -108,11 +107,12 @@ export function getNextWord(baseLang: string, learningLang: string, dictionary: 
   return result;
 }
 
-export function getDictionaryByOption(dictionary: Word[], optionsId: number[]): Word[] {
+export function getDictionaryBySelection(dictionary: Word[], fastSelection: SelectionItem): Word[] {
+  const { filter, key } = fastSelection;
   const dic: Word[] = [];
   for (let word of dictionary) {
-    if (optionsId.includes(word.id)) dic.push(word);
-    if (dic.length === optionsId.length) break;
+    const value = Number(word[key as keyof Word]);
+    if (filter.includes(value)) dic.push(word);
   }
   return dic;
 }

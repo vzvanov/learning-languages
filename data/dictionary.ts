@@ -693,5 +693,500 @@ export const dictionary: Word[] = [
         value: ""
       }
     ]
+  },
+  {
+    "id": 22,
+    part: LangPart.pronoun,
+    meanings: [
+      {
+        lang: "rus",
+        value: "я"
+      },
+      {
+        lang: "slv",
+        value: "jaz"
+      },
+      {
+        lang: "eng",
+        value: "i"
+      }
+    ],
+    "images": [],
+    "description": [
+      {
+        lang: "rus",
+        value: ""
+      },
+      {
+        lang: "slv",
+        value: ""
+      },
+      {
+        lang: "eng",
+        value: ""
+      }
+    ]
+  },
+  {
+    "id": 23,
+    part: LangPart.pronoun,
+    meanings: [
+      {
+        lang: "rus",
+        value: "вы"
+      },
+      {
+        lang: "slv",
+        value: "vi"
+      },
+      {
+        lang: "eng",
+        value: "you"
+      }
+    ],
+    "images": [],
+    "description": [
+      {
+        lang: "rus",
+        value: ""
+      },
+      {
+        lang: "slv",
+        value: ""
+      },
+      {
+        lang: "eng",
+        value: ""
+      }
+    ]
+  },
+  {
+    "id": 24,
+    part: LangPart.pronoun,
+    meanings: [
+      {
+        lang: "rus",
+        value: "она"
+      },
+      {
+        lang: "slv",
+        value: "ona"
+      },
+      {
+        lang: "eng",
+        value: "she"
+      }
+    ],
+    "images": [],
+    "description": [
+      {
+        lang: "rus",
+        value: ""
+      },
+      {
+        lang: "slv",
+        value: ""
+      },
+      {
+        lang: "eng",
+        value: ""
+      }
+    ]
+  },
+  {
+    "id": 25,
+    part: LangPart.pronoun,
+    meanings: [
+      {
+        lang: "rus",
+        value: "они"
+      },
+      {
+        lang: "slv",
+        value: "oni"
+      },
+      {
+        lang: "eng",
+        value: "they"
+      }
+    ],
+    "images": [],
+    "description": [
+      {
+        lang: "rus",
+        value: ""
+      },
+      {
+        lang: "slv",
+        value: ""
+      },
+      {
+        lang: "eng",
+        value: ""
+      }
+    ]
+  },
+  {
+    "id": 26,
+    part: LangPart.pronoun,
+    meanings: [
+      {
+        lang: "rus",
+        value: "ты"
+      },
+      {
+        lang: "slv",
+        value: "ti"
+      },
+      {
+        lang: "eng",
+        value: "you"
+      }
+    ],
+    "images": [],
+    "description": [
+      {
+        lang: "rus",
+        value: ""
+      },
+      {
+        lang: "slv",
+        value: ""
+      },
+      {
+        lang: "eng",
+        value: ""
+      }
+    ]
+  },
+  {
+    "id": 27,
+    part: LangPart.pronoun,
+    meanings: [
+      {
+        lang: "rus",
+        value: "он"
+      },
+      {
+        lang: "slv",
+        value: "on"
+      },
+      {
+        lang: "eng",
+        value: "he"
+      }
+    ],
+    "images": [],
+    "description": [
+      {
+        lang: "rus",
+        value: ""
+      },
+      {
+        lang: "slv",
+        value: ""
+      },
+      {
+        lang: "eng",
+        value: ""
+      }
+    ]
+  },
+  {
+    "id": 28,
+    part: LangPart.pronoun,
+    meanings: [
+      {
+        lang: "rus",
+        value: "мы"
+      },
+      {
+        lang: "slv",
+        value: "mi"
+      },
+      {
+        lang: "eng",
+        value: "we"
+      }
+    ],
+    "images": [],
+    "description": [
+      {
+        lang: "rus",
+        value: ""
+      },
+      {
+        lang: "slv",
+        value: ""
+      },
+      {
+        lang: "eng",
+        value: ""
+      }
+    ]
+  },
+  {
+    "id": 29,
+    part: LangPart.pronoun,
+    meanings: [
+      {
+        lang: "rus",
+        value: "мне"
+      },
+      {
+        lang: "slv",
+        value: "me"
+      },
+      {
+        lang: "eng",
+        value: "to me"
+      }
+    ],
+    "images": [],
+    "description": [
+      {
+        lang: "rus",
+        value: ""
+      },
+      {
+        lang: "slv",
+        value: ""
+      },
+      {
+        lang: "eng",
+        value: ""
+      }
+    ]
+  },
+  {
+    "id": 30,
+    part: LangPart.pronoun,
+    meanings: [
+      {
+        lang: "rus",
+        value: "мы (пара м/ж)"
+      },
+      {
+        lang: "slv",
+        value: "midva"
+      },
+      {
+        lang: "eng",
+        value: "we"
+      }
+    ],
+    "images": [],
+    "description": [
+      {
+        lang: "rus",
+        value: ""
+      },
+      {
+        lang: "slv",
+        value: ""
+      },
+      {
+        lang: "eng",
+        value: ""
+      }
+    ]
+  },
+  {
+    "id": 31,
+    part: LangPart.pronoun,
+    meanings: [
+      {
+        lang: "rus",
+        value: "мы (пара ж/ж)"
+      },
+      {
+        lang: "slv",
+        value: "midve"
+      },
+      {
+        lang: "eng",
+        value: "we"
+      }
+    ],
+    "images": [],
+    "description": [
+      {
+        lang: "rus",
+        value: ""
+      },
+      {
+        lang: "slv",
+        value: ""
+      },
+      {
+        lang: "eng",
+        value: ""
+      }
+    ]
+  },
+  {
+    "id": 32,
+    part: LangPart.pronoun,
+    meanings: [
+      {
+        lang: "rus",
+        value: "те"
+      },
+      {
+        lang: "slv",
+        value: "one"
+      },
+      {
+        lang: "eng",
+        value: "those"
+      }
+    ],
+    "images": [],
+    "description": [
+      {
+        lang: "rus",
+        value: ""
+      },
+      {
+        lang: "slv",
+        value: ""
+      },
+      {
+        lang: "eng",
+        value: ""
+      }
+    ]
+  },
+  {
+    "id": 33,
+    part: LangPart.pronoun,
+    meanings: [
+      {
+        lang: "rus",
+        value: "вы (пара м/ж)"
+      },
+      {
+        lang: "slv",
+        value: "vidva"
+      },
+      {
+        lang: "eng",
+        value: "you"
+      }
+    ],
+    "images": [],
+    "description": [
+      {
+        lang: "rus",
+        value: ""
+      },
+      {
+        lang: "slv",
+        value: ""
+      },
+      {
+        lang: "eng",
+        value: ""
+      }
+    ]
+  },
+  {
+    "id": 34,
+    part: LangPart.pronoun,
+    meanings: [
+      {
+        lang: "rus",
+        value: "вы (пара ж/ж)"
+      },
+      {
+        lang: "slv",
+        value: "vidve"
+      },
+      {
+        lang: "eng",
+        value: "you"
+      }
+    ],
+    "images": [],
+    "description": [
+      {
+        lang: "rus",
+        value: ""
+      },
+      {
+        lang: "slv",
+        value: ""
+      },
+      {
+        lang: "eng",
+        value: ""
+      }
+    ]
+  },
+  {
+    "id": 35,
+    part: LangPart.pronoun,
+    meanings: [
+      {
+        lang: "rus",
+        value: "они (пара м/ж)"
+      },
+      {
+        lang: "slv",
+        value: "onadva"
+      },
+      {
+        lang: "eng",
+        value: "they"
+      }
+    ],
+    "images": [],
+    "description": [
+      {
+        lang: "rus",
+        value: ""
+      },
+      {
+        lang: "slv",
+        value: ""
+      },
+      {
+        lang: "eng",
+        value: ""
+      }
+    ]
+  },
+  {
+    "id": 36,
+    part: LangPart.pronoun,
+    meanings: [
+      {
+        lang: "rus",
+        value: "они (пара ж/ж)"
+      },
+      {
+        lang: "slv",
+        value: "onidve"
+      },
+      {
+        lang: "eng",
+        value: "they"
+      }
+    ],
+    "images": [],
+    "description": [
+      {
+        lang: "rus",
+        value: ""
+      },
+      {
+        lang: "slv",
+        value: ""
+      },
+      {
+        lang: "eng",
+        value: ""
+      }
+    ]
   }
 ]

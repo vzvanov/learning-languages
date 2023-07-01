@@ -1,7 +1,7 @@
-import { getDictionary, getDictionaryByOption, getNextWord } from "@/common_modules/common";
-import { Option, SourceDB, Word } from "@/common_modules/types";
+import { getDictionary, getDictionaryBySelection, getNextWord } from "@/common_modules/common";
+import { Selections, SourceDB, Word } from "@/common_modules/types";
 import { dictionary } from "@/data/dictionary";
-import { options } from "@/data/options";
+import { selections } from "@/data/selections";
 
 export const getAllWords = async (baseLang: string, learningLang: string, source: SourceDB) => {
   if (source === SourceDB.api) {
@@ -20,7 +20,7 @@ export const getAllWords = async (baseLang: string, learningLang: string, source
   }
 };
 
-export const getNextWordToLearn = async (baseLang: string, learningLang: string, source: SourceDB, option: string) => {
+export const getNextWordToLearn = async (baseLang: string, learningLang: string, source: SourceDB, selection: string) => {
   if (source === SourceDB.api) {
     const url = `/api/next-for-learning/${baseLang}/${learningLang}`;
     const response = await fetch(url);
@@ -30,13 +30,12 @@ export const getNextWordToLearn = async (baseLang: string, learningLang: string,
 
   if (source === SourceDB.local) {
     let dic: Word[];
-    if (option) {
-      const arrayId = options[option as keyof Option];
-      dic = getDictionaryByOption(dictionary, arrayId);
+    if (selection) {
+      const fastSelection = selections[selection as keyof Selections];
+      dic = getDictionaryBySelection(dictionary, fastSelection);
     } else {
       dic = dictionary;
     }
-
     const nextWord = getNextWord(baseLang, learningLang, dic);
     return nextWord;
   }

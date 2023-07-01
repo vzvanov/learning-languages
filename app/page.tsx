@@ -13,6 +13,11 @@ const items = [
     name: 'to be',
     href: '/stages/to-be'
   },
+  {
+    id: '3',
+    name: 'pronoun',
+    href: '/stages/pronoun'
+  },
 ];
 
 export default function Home() {
