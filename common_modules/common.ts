@@ -1,4 +1,4 @@
-import { FilterItem, LangPair, LangPart, SelectionItem, Word, WordToLearn } from "@/common_modules/types";
+import { FilterItem, LangPair, LangPart, Word, WordToLearn } from "@/common_modules/types";
 import { filters } from "@/data/filters";
 
 export const getMeaningsWord = (word: Word, baseLang: string, learningLang: string) => {
