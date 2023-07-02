@@ -1,4 +1,5 @@
-import { LangPair, LangPart, SelectionItem, Word, WordToLearn } from "@/common_modules/types";
+import { FilterItem, LangPair, LangPart, SelectionItem, Word, WordToLearn } from "@/common_modules/types";
+import { filters } from "@/data/filters";
 
 export const getMeaningsWord = (word: Word, baseLang: string, learningLang: string) => {
   let data: LangPair = {
@@ -107,12 +108,24 @@ export function getNextWord(baseLang: string, learningLang: string, dictionary: 
   return result;
 }
 
-export function getDictionaryBySelection(dictionary: Word[], fastSelection: SelectionItem): Word[] {
-  const { filter, key } = fastSelection;
+export function getDictionaryByFilter(dictionary: Word[], filterItem: FilterItem): Word[] {
+  const { filter, key } = filterItem;
   const dic: Word[] = [];
+  if (!key) return dic;
   for (let word of dictionary) {
     const value = Number(word[key as keyof Word]);
     if (filter.includes(value)) dic.push(word);
   }
   return dic;
+}
+
+export function getFilterByName(name: string): FilterItem {
+  for (let item of filters) {
+    if (item.name === name) return item;
+  }
+  return {
+    name: '',
+    filter: [],
+    key: ''
+  }
 }

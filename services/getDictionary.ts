@@ -1,7 +1,6 @@
-import { getDictionary, getDictionaryBySelection, getNextWord } from "@/common_modules/common";
-import { Selections, SourceDB, Word } from "@/common_modules/types";
+import { getDictionary, getDictionaryByFilter, getFilterByName, getNextWord } from "@/common_modules/common";
+import { SourceDB, Word } from "@/common_modules/types";
 import { dictionary } from "@/data/dictionary";
-import { selections } from "@/data/selections";
 
 export const getAllWords = async (baseLang: string, learningLang: string, source: SourceDB) => {
   if (source === SourceDB.api) {
@@ -31,8 +30,8 @@ export const getNextWordToLearn = async (baseLang: string, learningLang: string,
   if (source === SourceDB.local) {
     let dic: Word[];
     if (selection) {
-      const fastSelection = selections[selection as keyof Selections];
-      dic = getDictionaryBySelection(dictionary, fastSelection);
+      const filter = getFilterByName(selection);
+      dic = getDictionaryByFilter(dictionary, filter);
     } else {
       dic = dictionary;
     }
