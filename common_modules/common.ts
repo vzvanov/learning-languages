@@ -1,4 +1,5 @@
 import { FilterItem, LangPair, LangPart, Word, WordToLearn } from "@/common_modules/types";
+import { dictionary } from "@/data/dictionary";
 import { filters } from "@/data/filters";
 
 export const getMeaningsWord = (word: Word, baseLang: string, learningLang: string) => {
@@ -18,7 +19,7 @@ export const getMeaningsWord = (word: Word, baseLang: string, learningLang: stri
   return { data, readyWord };
 }
 
-export const getDictionary = (dictionary: Word[], baseLang: string, learningLang: string): LangPair[] => {
+export const getLangPairDictionary = (dictionary: Word[], baseLang: string, learningLang: string): LangPair[] => {
   const dic: LangPair[] = [];
 
   dictionary.forEach((word) => {
@@ -128,4 +129,24 @@ export function getFilterByName(name: string): FilterItem {
     filter: [],
     key: ''
   }
+}
+
+export function getDictionaryFromLocalStore(): Word[] {
+  let dic: Word[] = [];
+  let value = localStorage.getItem('dictionary');
+  if (value) {
+    dic = JSON.parse(value);
+  } else {
+    dic = dictionary;
+  }
+  return dic;
+}
+
+export function getNextDictionaryId(): number {
+  const dic = getDictionaryFromLocalStore();
+  let max = 0;
+  for (let item of dic) {
+    if (item.id > max) max = item.id;
+  }
+  return ++max;
 }

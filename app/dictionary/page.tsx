@@ -6,6 +6,7 @@ import { useEffect, useState } from 'react';
 import { shallow } from 'zustand/shallow';
 import styles from './dictionary.module.css';
 import { Word } from '@/components/Word/Word';
+import Link from 'next/link';
 
 export default function Dictionary() {
   const [baseLang, learningLang] = useLanguages(
@@ -30,6 +31,11 @@ export default function Dictionary() {
 
   return (
     <>
+      <Link href={'stages/add'}
+        className={styles.item}
+      >
+        Add
+      </Link>
       <div
         className={styles.words}
       >

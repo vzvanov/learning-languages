@@ -1,0 +1,41 @@
+.form {
+  margin-top: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.h3 {
+  text-align: center;
+}
+
+.lebel {
+  display: grid;
+  grid-template-columns: 4rem 1fr;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
+
+.lebel input {
+  width: 15rem;
+}
+
+.btn {
+  display: block;
+  width: 5rem;
+  border-radius: 0.5rem;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: antiquewhite;
+}
+
+.btn:active {
+  font-weight: bold;
+}
+
+.info {
+  text-align: center;
+  color: blue;
+}
