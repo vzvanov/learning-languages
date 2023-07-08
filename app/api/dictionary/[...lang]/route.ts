@@ -1,4 +1,4 @@
-import { getDictionary } from "@/common_modules/common";
+import { getLangPairDictionary } from "@/common_modules/common";
 import { dictionary } from "@/data/dictionary";
 import { NextResponse } from "next/server";
 
@@ -11,6 +11,6 @@ export async function GET(req: Request, { params }: { params: { lang: string[] }
     }
     )
   }
-  const dic = getDictionary(dictionary, baseLang, learningLang);
+  const dic = getLangPairDictionary(dictionary, baseLang, learningLang);
   return NextResponse.json(dic);
 }
